@@ -5,7 +5,7 @@ from peft import PeftModel, PeftConfig
 
 
 #peft 방식으로 fine tuning 한 모델 불러오기  
-peft_model_id = "./outputs/checkpoint-500"  #finetuned 모델 path  
+peft_model_id = "./outputs/checkpoint-99"  #finetuned 모델 path  
 config = PeftConfig.from_pretrained(peft_model_id)
 bnb_config = BitsAndBytesConfig(    #test할때도 동일하게 4비트 양자화 사용 
     load_in_4bit=True,
@@ -20,9 +20,8 @@ tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path)
 model.eval()
 
 #모델 테스트를 위한 함수 (질문을 input으로 받아 answer를 output)
-def gen(x):
-    q = f"### 질문: {x}\n\n### 답변:"
-    # print(q)
+def gen(log1, log2):
+    q = f"Predict the next system log based on the past.\n past:{log1}\n{log2}\nnext:",
     gened = model.generate(
         **tokenizer(
             q, 
@@ -36,7 +35,5 @@ def gen(x):
     )
     print(tokenizer.decode(gened[0]))
 
-gen('건강하게 살기 위한 세 가지 방법은?')
-gen('피부가 좋아지는 방법은?')
-gen('파이썬과 c 언어중에 코드 실행속도 측면에서 빠른 언어는?')
-gen('축구를 가장 잘하는 나라는?')
+gen("K8s Secret Get Successfully.", "Sensitive file opened for reading by non-trusted program.")
+

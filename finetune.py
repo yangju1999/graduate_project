@@ -84,12 +84,13 @@ trainer = transformers.Trainer(
     args=transformers.TrainingArguments(
         per_device_train_batch_size=2,
         gradient_accumulation_steps=1,
-        max_steps=66, #총 66개의 데이터 셋, 배치 사이즈 2 이므로 33번에 1epoch. 
+        max_steps=99, #총 66개의 데이터 셋, 배치 사이즈 2 이므로 33번에 1epoch. 
         learning_rate=2e-4,
         fp16=True,
         logging_steps=10,
         output_dir="outputs",  
-        optim="paged_adamw_8bit"
+        optim="paged_adamw_8bit",
+        save_steps = 33
     ),
     data_collator=transformers.DataCollatorForLanguageModeling(tokenizer, mlm=False),
 )
