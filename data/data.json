@@ -1,0 +1,324 @@
+{
+    "event_sequence": [
+        {
+            "1": "K8s Secret Get Successfully.",
+            "2": "Sensitive file opened for reading by non-trusted program.",
+            "3": "Attach/Exec to pod."
+        },
+        {
+            "1": "Sensitive file opened for reading by non-trusted program.",
+            "2": "Attach/Exec to pod.",
+            "3": "Created Role/ClusterRole with pod exec privileges."
+        },
+        {
+            "1": "Attach/Exec to pod.",
+            "2": "Created Role/ClusterRole with pod exec privileges.",
+            "3": "K8s Deployment Created."
+        },
+        {
+            "1": "Created Role/ClusterRole with pod exec privileges.",
+            "2": "K8s Deployment Created.",
+            "3": "K8s Deployment Deleted."
+        },
+        {
+            "1": "K8s Deployment Created.",
+            "2": "K8s Deployment Deleted.",
+            "3": "Packet socket was created in a container."
+        },
+        {
+            "1": "K8s Deployment Deleted.",
+            "2": "Packet socket was created in a container.",
+            "3": "K8s Secret Created."
+        },
+        {
+            "1": "Packet socket was created in a container.",
+            "2": "K8s Secret Created.",
+            "3": "K8s configmap with private credential."
+        },
+        {
+            "1": "K8s Secret Created.",
+            "2": "K8s configmap with private credential.",
+            "3": "K8s Cluster Role Deleted."
+        },
+        {
+            "1": "K8s configmap with private credential.",
+            "2": "K8s Cluster Role Deleted.",
+            "3": "File execution detected from /dev/shm."
+        },
+        {
+            "1": "K8s Cluster Role Deleted.",
+            "2": "File execution detected from /dev/shm.",
+            "3": "Request by anonymous user allowed."
+        },
+        {
+            "1": "File execution detected from /dev/shm.",
+            "2": "Request by anonymous user allowed.",
+            "3": "K8s Operation performed by full admin user."
+        },
+        {
+            "1": "Request by anonymous user allowed.",
+            "2": "K8s Operation performed by full admin user.",
+            "3": "Detected AWS credentials search activity."
+        },
+        {
+            "1": "K8s Operation performed by full admin user.",
+            "2": "Detected AWS credentials search activity.",
+            "3": "Hardlinks created over sensitive files."
+        },
+        {
+            "1": "Detected AWS credentials search activity.",
+            "2": "Hardlinks created over sensitive files.",
+            "3": "Unexpected connection to K8s API Server from container."
+        },
+        {
+            "1": "Hardlinks created over sensitive files.",
+            "2": "Unexpected connection to K8s API Server from container.",
+            "3": "System user ran an interactive command."
+        },
+        {
+            "1": "Unexpected connection to K8s API Server from container.",
+            "2": "System user ran an interactive command.",
+            "3": "Redirect stdout/stdin to network connection."
+        },
+        {
+            "1": "System user ran an interactive command.",
+            "2": "Redirect stdout/stdin to network connection.",
+            "3": "K8s Namespace Deleted."
+        },
+        {
+            "1": "Redirect stdout/stdin to network connection.",
+            "2": "K8s Namespace Deleted.",
+            "3": "K8s Ingress Without TLS Cert Created."
+        },
+        {
+            "1": "K8s Namespace Deleted.",
+            "2": "K8s Ingress Without TLS Cert Created.",
+            "3": "Disallowed namespace created."
+        },
+        {
+            "1": "K8s Ingress Without TLS Cert Created.",
+            "2": "Disallowed namespace created.",
+            "3": "Detected ptrace PTRACE_ATTACH attempt."
+        },
+        {
+            "1": "Disallowed namespace created.",
+            "2": "Detected ptrace PTRACE_ATTACH attempt.",
+            "3": "K8s Secret Get Unsuccessfully Tried."
+        },
+        {
+            "1": "Detected ptrace PTRACE_ATTACH attempt.",
+            "2": "K8s Secret Get Unsuccessfully Tried.",
+            "3": "K8s Namespace Created."
+        },
+        {
+            "1": "K8s Secret Get Unsuccessfully Tried.",
+            "2": "K8s Namespace Created.",
+            "3": "K8s Cluster Role Binding Deleted."
+        },
+        {
+            "1": "K8s Namespace Created.",
+            "2": "K8s Cluster Role Binding Deleted.",
+            "3": "K8s Service Created."
+        },
+        {
+            "1": "K8s Cluster Role Binding Deleted.",
+            "2": "K8s Service Created.",
+            "3": "K8s ConfigMap Created."
+        },
+        {
+            "1": "K8s Service Created.",
+            "2": "K8s ConfigMap Created.",
+            "3": "Created Role/ClusterRole with write privileges."
+        },
+        {
+            "1": "K8s ConfigMap Created.",
+            "2": "Created Role/ClusterRole with write privileges.",
+            "3": "K8s Service Deleted."
+        },
+        {
+            "1": "Created Role/ClusterRole with write privileges.",
+            "2": "K8s Service Deleted.",
+            "3": "Pod started using host ipc namespace."
+        },
+        {
+            "1": "K8s Service Deleted.",
+            "2": "Pod started using host ipc namespace.",
+            "3": "Shell spawned by untrusted binary."
+        },
+        {
+            "1": "Pod started using host ipc namespace.",
+            "2": "Shell spawned by untrusted binary.",
+            "3": "Pod started using host pid namespace."
+        },
+        {
+            "1": "Shell spawned by untrusted binary.",
+            "2": "Pod started using host pid namespace.",
+            "3": "Pod started using host network."
+        },
+        {
+            "1": "Pod started using host pid namespace.",
+            "2": "Pod started using host network.",
+            "3": "Cluster Role Binding to cluster-admin role."
+        },
+        {
+            "1": "Pod started using host network.",
+            "2": "Cluster Role Binding to cluster-admin role.",
+            "3": "Service account created in kube namespace."
+        },
+        {
+            "1": "Cluster Role Binding to cluster-admin role.",
+            "2": "Service account created in kube namespace.",
+            "3": "A shell was spawned in a container with an attached terminal."
+        },
+        {
+            "1": "Service account created in kube namespace.",
+            "2": "A shell was spawned in a container with an attached terminal.",
+            "3": "K8s Serviceaccount Created."
+        },
+        {
+            "1": "A shell was spawned in a container with an attached terminal.",
+            "2": "K8s Serviceaccount Created.",
+            "3": "Linux Kernel Module injection from container."
+        },
+        {
+            "1": "K8s Serviceaccount Created.",
+            "2": "Linux Kernel Module injection from container.",
+            "3": "Bulk data has been removed from disk."
+        },
+        {
+            "1": "Linux Kernel Module injection from container.",
+            "2": "Bulk data has been removed from disk.",
+            "3": "System ClusterRole/Role modified or deleted."
+        },
+        {
+            "1": "Bulk data has been removed from disk.",
+            "2": "System ClusterRole/Role modified or deleted.",
+            "3": "Netcat runs inside container that allows remote code execution."
+        },
+        {
+            "1": "System ClusterRole/Role modified or deleted.",
+            "2": "Netcat runs inside container that allows remote code execution.",
+            "3": "Pod started with privileged container."
+        },
+        {
+            "1": "Netcat runs inside container that allows remote code execution.",
+            "2": "Pod started with privileged container.",
+            "3": "Grep private keys or passwords activities found."
+        },
+        {
+            "1": "Pod started with privileged container.",
+            "2": "Grep private keys or passwords activities found.",
+            "3": "Executing binary not part of base image."
+        },
+        {
+            "1": "Grep private keys or passwords activities found.",
+            "2": "Executing binary not part of base image.",
+            "3": "Symlinks created over sensitive files."
+        },
+        {
+            "1": "Executing binary not part of base image.",
+            "2": "Symlinks created over sensitive files.",
+            "3": "Detected potential PTRACE_TRACEME anti-debug attempt."
+        },
+        {
+            "1": "Symlinks created over sensitive files.",
+            "2": "Detected potential PTRACE_TRACEME anti-debug attempt.",
+            "3": "NodePort Service Created."
+        },
+        {
+            "1": "Detected potential PTRACE_TRACEME anti-debug attempt.",
+            "2": "NodePort Service Created.",
+            "3": "K8s Operation performed by user not in allowed list of users."
+        },
+        {
+            "1": "NodePort Service Created.",
+            "2": "K8s Operation performed by user not in allowed list of users.",
+            "3": "Detect an attempt to exploit a container escape using release_agent file."
+        },
+        {
+            "1": "K8s Operation performed by user not in allowed list of users.",
+            "2": "Detect an attempt to exploit a container escape using release_agent file.",
+            "3": "K8s ConfigMap Deleted."
+        },
+        {
+            "1": "Detect an attempt to exploit a container escape using release_agent file.",
+            "2": "K8s ConfigMap Deleted.",
+            "3": "K8s Cluster Role Binding Created."
+        },
+        {
+            "1": "K8s ConfigMap Deleted.",
+            "2": "K8s Cluster Role Binding Created.",
+            "3": "Read monitored file via directory traversal."
+        },
+        {
+            "1": "K8s Cluster Role Binding Created.",
+            "2": "Read monitored file via directory traversal.",
+            "3": "K8s Secret Deleted."
+        },
+        {
+            "1": "Read monitored file via directory traversal.",
+            "2": "K8s Secret Deleted.",
+            "3": "K8s Cluster Role Created."
+        },
+        {
+            "1": "K8s Secret Deleted.",
+            "2": "K8s Cluster Role Created.",
+            "3": "K8s Audit Event received."
+        },
+        {
+            "1": "K8s Cluster Role Created.",
+            "2": "K8s Audit Event received.",
+            "3": "Debugfs launched started in a privileged container."
+        },
+        {
+            "1": "K8s Audit Event received.",
+            "2": "Debugfs launched started in a privileged container.",
+            "3": "Pod started with container not in allowed list."
+        },
+        {
+            "1": "Debugfs launched started in a privileged container.",
+            "2": "Pod started with container not in allowed list.",
+            "3": "Node not in allowed list successfully joined the cluster."
+        },
+        {
+            "1": "Pod started with container not in allowed list.",
+            "2": "Node not in allowed list successfully joined the cluster.",
+            "3": "K8s Serviceaccount Deleted."
+        },
+        {
+            "1": "Node not in allowed list successfully joined the cluster.",
+            "2": "K8s Serviceaccount Deleted.",
+            "3": "Ephemeral container is created in pod."
+        },
+        {
+            "1": "K8s Serviceaccount Deleted.",
+            "2": "Ephemeral container is created in pod.",
+            "3": "Pod created in kube namespace."
+        },
+        {
+            "1": "Ephemeral container is created in pod.",
+            "2": "Pod created in kube namespace.",
+            "3": "Node not in allowed list tried unsuccessfully to join the cluster ."
+        },
+        {
+            "1": "Pod created in kube namespace.",
+            "2": "Node not in allowed list tried unsuccessfully to join the cluster .",
+            "3": "Pod started with sensitive mount."
+        },
+        {
+            "1": "Node not in allowed list tried unsuccessfully to join the cluster .",
+            "2": "Pod started with sensitive mount.",
+            "3": "Log files were tampered."
+        },
+        {
+            "1": "Pod started with sensitive mount.",
+            "2": "Log files were tampered.",
+            "3": "Created Role/ClusterRole with wildcard."
+        },
+        {
+            "1": "Log files were tampered.",
+            "2": "Created Role/ClusterRole with wildcard.",
+            "3": "Sensitive file opened for reading by trusted program after startup."
+        }
+    ]
+}
