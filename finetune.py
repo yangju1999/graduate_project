@@ -5,8 +5,8 @@ data = load_dataset("json", data_files = "data/rule.json", field = 'events')
 
 # 질문과 답변을 모두 포함하여 간단한 학습용 프롬프트를 작성해줍니다.
 data = data.map(
-    lambda x: {'text': f"Based on the system information, alert the anomaly behavior.##system information:occured system call is {x['system_call']}, process name is {x['process_name']}, UID is {x['UID']}.##anomaly behavior:{x['output']} by UID {x['UID']}." if x['open_file_name'] is None else \
-        f"Based on the system information, alert the anomaly behavior.##system information:occured system call is {x['system_call']}, process name is {x['process_name']}, open file name is {x['open_file_name']}.##anomaly behavior:{x['output']}. open file name is {x['open_file_name']}."
+    lambda x: {'text': f"Based on the system information, alert the anomaly behavior.\n##system information:occured system call is {x['system_call']}, process name is {x['process_name']}, UID is {x['UID']}.\n##anomaly behavior:{x['output']} by UID {x['UID']}." if x['open_file_name'] is None else \
+        f"Based on the system information, alert the anomaly behavior.\n##system information:occured system call is {x['system_call']}, process name is {x['process_name']}, open file name is {x['open_file_name']}.\n##anomaly behavior:{x['output']}, open file name is {x['open_file_name']}."
         }
 )
 
@@ -107,18 +107,21 @@ model.config.use_cache = True  # silence the warnings. Please re-enable for infe
 def gen(system_info):
     gened = model.generate(
         **tokenizer(
-            f"Based on the system information, alert the anomaly behavior.##system information:{system_info}##anomaly behavior:", 
+            f"Based on the system information, alert the anomaly behavior.\n##system information:{system_info}\n##anomaly behavior:", 
             return_tensors='pt', 
             return_token_type_ids=False
         ), 
-        max_new_tokens=256,
+        max_new_tokens=30,
         early_stopping=True,
         do_sample=True,
         eos_token_id=2,
     )
-    print(tokenizer.decode(gened[0]))
+    result = tokenizer.decode(gened[0])
+    start_index = result.find("##anomaly")
+    end_index = start_index + result[start_index:].find(".")
+    print(result[:end_index+1])
 
 
-gen("Occured system call is execve2, process name is bash, UID is 1000.")
+gen("Occured system call is execveat, process name is bash, UID is 1000.")
 gen("Occured system call is openat2, process name is a.out, open file name is /etc/file1.")
 
