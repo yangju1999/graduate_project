@@ -1,0 +1,20 @@
+{
+    "events": [
+        {
+            "system_call":"execve",
+            "timestamp":"1231431",
+            "process_name":"bash",
+            "UID":"0",
+            "output": "Terminal shell spawned"
+        },
+        {
+            "system call":"open",
+            "timestamp":"1231431",
+            "process name":"unknown",
+            "UID":"1000",
+            "open_file_name":"/etc/file1",
+            "output": "Sensitive file opened for reading by non-trusted program"
+        }
+    ]
+
+}

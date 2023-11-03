@@ -1,12 +1,13 @@
-# Instruction tuning 코드 
 from datasets import load_dataset
+import pdb 
 
-#hugging face에서 이준범씨가 네이버 지식인으로부터 제작한 질문, 답변 쌍 데이터 셋 가져오기 
-data = load_dataset("json", data_files = "data/data.json", field = 'event_sequence')
+data = load_dataset("json", data_files = "data/rule.json", field = 'events')
 
-# Q&A 모델이므로, 질문과 답변을 모두 포함하여 간단한 학습용 프롬프트를 작성해줍니다.
+# 질문과 답변을 모두 포함하여 간단한 학습용 프롬프트를 작성해줍니다.
 data = data.map(
-    lambda x: {'text': f"Predict the next system log based on the past.\n past:{x['1']}\n{x['2']}\nnext:{x['3']}" }
+    lambda x: {'text': f"Based on the system information, alert the anomaly behavior.##system information:occured system call is {x['system_call']}, process name is {x['process_name']}, UID is {x['UID']}.##anomaly behavior:{x['output']} by UID {x['UID']}." if x['open_file_name'] is None else \
+        f"Based on the system information, alert the anomaly behavior.##system information:occured system call is {x['system_call']}, process name is {x['process_name']}, open file name is {x['open_file_name']}.##anomaly behavior:{x['output']}. open file name is {x['open_file_name']}."
+        }
 )
 
 # pretrain 모델 load
@@ -84,13 +85,13 @@ trainer = transformers.Trainer(
     args=transformers.TrainingArguments(
         per_device_train_batch_size=2,
         gradient_accumulation_steps=1,
-        max_steps=99, #총 66개의 데이터 셋, 배치 사이즈 2 이므로 33번에 1epoch. 
+        max_steps=100, #총 66개의 데이터 셋, 배치 사이즈 2 이므로 33번에 1epoch. 
         learning_rate=2e-4,
         fp16=True,
         logging_steps=10,
         output_dir="outputs",  
         optim="paged_adamw_8bit",
-        save_steps = 33
+        save_steps = 10
     ),
     data_collator=transformers.DataCollatorForLanguageModeling(tokenizer, mlm=False),
 )
@@ -103,10 +104,10 @@ model.config.use_cache = True  # silence the warnings. Please re-enable for infe
 
 
 #학습 이후 가볍게 validation 해보기 위한 함수 
-def gen(log1, log2):
+def gen(system_info):
     gened = model.generate(
         **tokenizer(
-            f"Predict the next system log based on the past.\n past:{log1}\n{log2}\nnext:", 
+            f"Based on the system information, alert the anomaly behavior.##system information:{system_info}##anomaly behavior:", 
             return_tensors='pt', 
             return_token_type_ids=False
         ), 
@@ -118,4 +119,6 @@ def gen(log1, log2):
     print(tokenizer.decode(gened[0]))
 
 
-gen('NodePort Service Created.', 'Log files were tampered.')
+gen("Occured system call is execve2, process name is bash, UID is 1000.")
+gen("Occured system call is openat2, process name is a.out, open file name is /etc/file1.")
+
